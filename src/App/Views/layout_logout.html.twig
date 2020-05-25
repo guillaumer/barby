@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Barby - Arbitrage tool</title>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<!-- Tell the browser to be responsive to screen width -->
+	<meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
+	<link rel="stylesheet" type="text/css" href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" />
+	<link rel="stylesheet" type="text/css" href="//maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" />
+	<link rel="stylesheet" type="text/css" href="//cdnjs.cloudflare.com/ajax/libs/ionicons/4.0.0-9/css/ionicons.min.css" />
+	<link rel="stylesheet" type="text/css" href="{{ asset('css/main.css') }}" />
+	<link rel="stylesheet" type="text/css" href="{{ asset('dist/AdminLTE/AdminLTE.min.css') }}" />
+	<link rel="stylesheet" type="text/css" href="{{ asset('dist/AdminLTE/skin-blue.min.css') }}" />
+	<link rel="stylesheet" type="text/css" href="{{ asset('dist/iCheck/square/blue.css') }}" />
+	{#<link rel="stylesheet" href="../../dist/css/skins/_all-skins.min.css">#}
+	<link rel="stylesheet" href="//fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600,700,300italic,400italic,600italic">
+	<script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+	<script type="text/javascript" src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+	<script type="text/javascript" src="{{ asset('dist/iCheck/icheck.min.js') }}"></script>
+	{#<script type="text/javascript" src="{{ asset('dist/AdminLTE/adminlte.min.js') }}"></script>#}
+	{% block meta %}{% endblock %}
+</head>
+<body class="{{ body_class }}">
+    {% block content %}{% endblock content %}
+</body>
+</html>

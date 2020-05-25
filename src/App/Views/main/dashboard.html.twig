@@ -1,0 +1,84 @@
+{% set body_class = 'hold-transition skin-blue dashboard' %}
+{% extends "layout.html.twig" %}
+
+{% block content %}
+
+    <!-- Content Header (Page header) -->
+    <section class="content-header">
+        <h1>
+            Dashboard
+        </h1>
+    </section>
+
+    <!-- Main content -->
+    <section class="content container-fluid">
+        <div class="row">
+            <div class="col-lg-12">
+                <div class="box box-primary">
+                    <div class="box-header with-border">
+                        <h3 class="box-title">BTC</h3>
+                        <span class="pull-right {{ dataset1lastGap > 0 ? 'positive' : 'negative' }}">{{ dataset1lastGap }}%</span>
+                    </div>
+                    <div class="box-body">
+                        <div class="graph" id="graph1"></div>
+                    </div>
+                    <div class="box-footer">
+                        Spread BTC Kraken / Bitflyer
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-6">
+                <div class="box box-primary">
+                    <div class="box-header with-border">
+                        <h3 class="box-title">ETH</h3>
+                        <span class="pull-right {{ dataset2lastGap > 0 ? 'positive' : 'negative' }}">{{ dataset2lastGap }}%</span>
+                    </div>
+                    <div class="box-body">
+                        <div class="graph" id="graph2"></div>
+                    </div>
+                    <div class="box-footer">
+                        Spread ETH Kraken / Bitflyer
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-6">
+                <div class="box box-primary">
+                    <div class="box-header with-border">
+                        <h3 class="box-title">BCH</h3>
+                        <span class="pull-right {{ dataset3lastGap > 0 ? 'positive' : 'negative' }}">{{ dataset3lastGap }}%</span>
+                    </div>
+                    <div class="box-body">
+                        <div class="graph" id="graph3"></div>
+                    </div>
+                    <div class="box-footer">
+                        Spread BCH Kraken / Bitflyer
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- /.content -->
+
+    <script type="text/javascript">
+        var ranges1   = [];
+        var averages1 = [];
+        var ranges2   = [];
+        var averages2 = [];
+        var ranges3   = [];
+        var averages3 = [];
+
+        {% for data1 in dataSet1 %}
+            ranges1.push([{{ data1.created }}, {{ data1.buy }}, {{ data1.sell }}]);
+            averages1.push([{{ data1.created }}, {{ data1.average }}]);
+        {% endfor %}
+        {% for data2 in dataSet2 %}
+            ranges2.push([{{ data2.created }}, {{ data2.buy }}, {{ data2.sell }}]);
+            averages2.push([{{ data2.created }}, {{ data2.average }}]);
+        {% endfor %}
+        {% for data3 in dataSet3 %}
+            ranges3.push([{{ data3.created }}, {{ data3.buy }}, {{ data3.sell }}]);
+            averages3.push([{{ data3.created }}, {{ data3.average }}]);
+        {% endfor %}
+    </script>
+
+{% endblock %}

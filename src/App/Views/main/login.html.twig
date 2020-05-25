@@ -1,0 +1,46 @@
+{% set body_class = 'hold-transition login-page' %}
+{% extends "layout_logout.html.twig" %}
+
+{% block content %}
+    <div class="login-box">
+        <div class="login-logo">
+            <a href="../../index2.html">Barby</a>
+        </div>
+        <div class="login-box-body">
+            <p class="login-box-msg">Sign in to start your session</p>
+            {% if error %}
+                <div class="alert alert-danger">
+                    {{ error }}
+                </div>
+            {% endif %}
+            <form action="{{ path('login') }}" method="post" id="login">
+                {{ form_errors(form) }}
+                <div class="form-group has-feedback">
+                    {{ form_errors(form._username) }}
+                    {{ form_widget(form._username) }}
+                    <span class="glyphicon glyphicon-user form-control-feedback"></span>
+                </div>
+                <div class="form-group has-feedback">
+                    {{ form_errors(form._password) }}
+                    {{ form_widget(form._password) }}
+                    <span class="glyphicon glyphicon-lock form-control-feedback"></span>
+                </div>
+                {{ form_rest(form) }}
+                <div class="row">
+                    <div class="col-xs-4 col-xs-push-8">
+                        <button type="submit" class="btn btn-primary btn-block btn-flat">Sign In</button>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+    <script>
+        (function($){
+            $('input').iCheck({
+                checkboxClass: 'icheckbox_square-blue',
+                radioClass: 'iradio_square-blue',
+                increaseArea: '20%' // optional
+            });
+        })(jQuery);
+    </script>
+{% endblock %}

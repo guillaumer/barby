@@ -1,0 +1,22 @@
+#Front
+index:
+    path: /
+    defaults: { _controller: 'main.controller:indexAction' }
+
+login:
+    path: /login
+    defaults: { _controller : 'main.controller:indexAction' }
+
+#Content
+dashboard:
+    path: /dashboard
+    defaults: { _controller : 'main.controller:dashboardAction' }
+
+#Run crons
+cronMarkets:
+    path: /cron_markets
+    defaults: { _controller : 'main.controller:cronMarketAction' }
+
+cronFx:
+    path: /cron_fx
+    defaults: { _controller : 'main.controller:cronFxAction' }

@@ -1,0 +1,13 @@
+body.dashboard .graph {
+    height: 300px;
+}
+
+.positive {
+    color: #54a71a;
+    font-weight: bold;
+}
+
+.negative {
+    color: #ff2f41;
+    font-weight: bold;
+}
